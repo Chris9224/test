@@ -1,17 +1,17 @@
 services:
-    database:
-      container_name: percona
-      image: percona/percona-server:8.0
-      environment:
-          - MYSQL_ROOT_PASSWORD=root
+  database:
+    container_name: percona
+    image: percona/percona-server:8.0
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
     app1:
       build: ./app1
       ports:
-        - "5001:5000"
+        - "5001:80"
     app2:
       build: ./app2
       ports:
-        - "5002:5000"
+        - "5002:80"
     nginx:
       build: ./nginx
       ports:
